@@ -40,9 +40,12 @@ namespace StringInceleme
             else
             {
                 kelime = "kavak";
+
+                l = kelime.Length - 1;
+
                 if (kelime[f] == kelime[l]) // k karşılaştır
                 {
-                    if (kelime[f++] == kelime[l--]) // a karşılaştır..
+                    if (kelime[++f] == kelime[--l]) // a karşılaştır..
                     {
 
                     }
@@ -65,6 +68,14 @@ namespace StringInceleme
 
                 // tam burada bu cümle içrisindeki palindrome kelimeleri ekrana yazdırınız...
                 // ütü - palindromdur...
+                char[] temp = item.ToCharArray(); // string veriyi char dizisine çeviriyoruz....
+                Array.Reverse(temp); // diziyi terst çevir...
+                string ters = new string(temp); // diziyi stringe çevir...
+
+                if (item == ters)
+                {
+                    Console.WriteLine($" {item} palindrome");
+                }
             }
 
 
